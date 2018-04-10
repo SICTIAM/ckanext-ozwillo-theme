@@ -70,7 +70,8 @@ class OzwilloThemePlugin(plugins.SingletonPlugin, DefaultTranslation):
             'ozwillo_theme_get_popular_organizations': ozwillo_theme_popular_organizations,
             'ozwillo_theme_display_date': ozwillo_theme_display_date,
             'ozwillo_theme_get_map': ozwillo_theme_get_map,
-            'ozwillo_theme_get_title': lambda: config.get('ckan.ozwillo_theme.map_title', 'Example map')
+            'ozwillo_theme_get_title': lambda: config.get('ckan.ozwillo_theme.map_title', 'Example map'),
+            'ozwillo_theme_spatial_installed': lambda: config.get('ckan.ozwillo_theme.spatial_installed', 'False')
         }
 
 def ozwillo_theme_popular_organizations():
