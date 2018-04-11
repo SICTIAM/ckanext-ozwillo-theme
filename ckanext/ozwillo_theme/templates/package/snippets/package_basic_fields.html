@@ -1,6 +1,4 @@
 
-    <script src="https://osmnames.org/api/v1/autocomplete.js"></script>
-    <link href="https://osmnames.org/api/v1/autocomplete.css" rel="stylesheet" />
 
 {% ckan_extends %}
 
@@ -9,8 +7,8 @@
   {% set spatial = h.ozwillo_theme_spatial_installed() %}
 
   {% if spatial %}
-    <div data-module="theme_location" autocomplete="off" id="search" type="text">
-    {{ form.prepend('spatial_name', id='spatial-name', label=_('Location'), placeholder=_('eg. Nice'), value=data.spatial_name, is_required=true) }}
+    <div data-module="theme_location" id="search" type="text">
+    {{ form.prepend('spatial_name', id='spatial-name', label=_('Location'), placeholder=_('eg. Nice'), value=data.spatial, is_required=true) }}
     </div>
   {% endif %}
 {% endblock %}

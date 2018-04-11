@@ -13,10 +13,16 @@
   {% resource 'theme/responsive.css' %}
   {% resource 'theme/off-canvas.js' %}
   <link rel="stylesheet" href="/css/font-awesome-4.1.0.min.css" />
+  <link href="https://osmnames.org/api/v1/autocomplete.css" rel="stylesheet" />
 {% endblock %}
 
 {% block links %}
    <link rel="shortcut icon" href="/img/data.ico" />
+{% endblock %}
+
+{% block scripts %}
+   {{ super() }}
+    <script src="https://osmnames.org/api/v1/autocomplete.js"></script>
 {% endblock %}
 
 
