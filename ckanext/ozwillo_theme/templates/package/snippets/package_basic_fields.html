@@ -1,14 +1,13 @@
-
-
 {% ckan_extends %}
 
 {% block package_basic_fields_custom %}
+  {% resource 'theme/jquery-ui.js' %}
   {% resource 'theme/theme_location.js' %}
   {% set spatial = h.ozwillo_theme_spatial_installed() %}
 
   {% if spatial %}
-    <div data-module="theme_location" id="search" type="text">
-    {{ form.prepend('spatial_name', id='spatial-name', label=_('Location'), placeholder=_('eg. Nice'), value=data.spatial, is_required=true) }}
+    <div data-module="theme_location" id="search">
+      {{ form.input('spatial_name', id='spatial-name', label=_('Location'), placeholder=_('eg. Nice'), value=data.spatial_name, is_required=true) }}
     </div>
   {% endif %}
 {% endblock %}
