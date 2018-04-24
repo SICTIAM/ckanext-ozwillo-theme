@@ -6,8 +6,6 @@
   {% set spatial = h.ozwillo_theme_spatial_installed() %}
 
   {% if spatial %}
-    <div data-module="theme_location" id="search">
-      {{ form.input('spatial_name', id='spatial-name', label=_('Location'), placeholder=_('eg. Nice'), value=data.spatial_name, is_required=true) }}
-    </div>
+      {{ form.input('spatial_name', error=errors.spatial, id='field-spatial-name', label=_('Location'), placeholder=_('eg. Nice'), value=data.spatial_name, attrs={'data-module': 'theme_location'}, is_required=true)}}
   {% endif %}
 {% endblock %}
