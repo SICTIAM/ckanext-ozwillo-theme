@@ -52,11 +52,9 @@ ckan.module('theme_location', function ($) {
           format:"json"
         })
         .done(function(data) {
-          console.log(data);
           try {
             document.getElementById("field-extras-0-key").value = 'spatial';
             document.getElementById("field-extras-0-value").value = JSON.stringify(data[0]['geojson']);
-            console.log(JSON.stringify(data[0]['geojson']));
           } catch (TypeError) {
             alert('Unknown location, please use the suggestions')
           }
