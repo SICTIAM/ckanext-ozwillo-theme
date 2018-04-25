@@ -3,7 +3,7 @@
 /* theme_location
  *
  * This JavaScript module gets a geojson from osm given a location name
- * TODO: Find how to manage properly the required field,
+ * TODO: Find how to manage properly the required field with the popup,
  *       Manage the case when the user click nowhere else than validate after typing the location
  *       For now, the request always fails, find why
  *       Find how to manage errors popup language
@@ -19,13 +19,14 @@ ckan.module('theme_location', function ($) {
       myform.onsubmit = function(){return validateForm()};
       var element = document.getElementById('custom_fields');
       element.firstElementChild.firstElementChild.style.display = 'none';
+      var osmkey = this.options.osmkey;
 
       $( function() {
         $( "#field-spatial-name" ).autocomplete({
           minLength: 2,
           source: function (request, response) {
             var query = request.term;
-            var url = 'https://search.osmnames.org/fr/q/' + query + '.js?key=xS5b3xnPgEUW5zi0GvWa';
+            var url = 'https://search.osmnames.org/fr/q/' + query + '.js?key=' + osmkey;
             $.ajax( {
               url: url,
               success: function( data ) {
