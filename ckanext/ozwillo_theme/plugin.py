@@ -72,7 +72,7 @@ class OzwilloThemePlugin(plugins.SingletonPlugin, DefaultTranslation):
             'ozwillo_theme_get_map': ozwillo_theme_get_map,
             'ozwillo_theme_get_title': lambda: config.get('ckanext.ozwillo_theme.map_title', 'Example map'),
             'ozwillo_theme_spatial_installed': lambda: config.get('ckanext.ozwillo_theme.spatial_installed', 'False'),
-            'ozwillo_theme_osmnames_key': lambda: config.get('ckanext.ozwillo_theme.osmnames_key', 'xS5b3xnPgEUW5zi0GvWa')
+            'ozwillo_theme_osmnames_key': lambda: config.get('ckanext.ozwillo_theme.osmnames_key', '')
 
         }
 

@@ -14,10 +14,7 @@ ckan.module('theme_location', function ($) {
       var setAlert= true;
       var val = document.getElementById("field-spatial-name");
       var osmkey = this.options.osmkey;
-      var missingvalue = this.options.missingvalue;
       var errorvalue = this.options.errorvalue;
-      var myform = document.getElementById("dataset-edit");
-      myform.onsubmit = function(){return validateForm()};
       var element = document.getElementById('custom_fields');
       element.firstElementChild.firstElementChild.style.display = 'none';
 
@@ -79,14 +76,6 @@ ckan.module('theme_location', function ($) {
         .fail(function(jqXhr, textStatus, error) {
           console.log("Error: " + textStatus + ", " + error);
         });
-      }
-
-      // Check if we entered a location
-      function validateForm() {
-        if (val.value === '') {
-          alert(missingvalue);
-          return false;
-        }
       }
     }
   };
